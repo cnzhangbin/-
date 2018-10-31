@@ -1,0 +1,126 @@
+<!--pages/project/live/live/live.wxml-->
+<scroll-view class='main_scroll' scroll-into-view="{{crid}}"  scroll-top="{{totop}}" scroll-y="true" scroll-with-animation="true">
+  <view class='main_box_container'>
+    <view class='main_box'  wx:for="{{audiolist}}" id="{{'audio'+index}}" wx:for-item="item" wx:for-index="index">
+
+      <view class='main_head'>
+        <image src='{{item.head}}'></image>
+      </view>
+
+      <view class='main_con' wx:if="{{item.audio_index==1}}">
+        <view class='main_name'>{{item.name}}</view>
+        <view class='main_audio {{item.played?"":"active"}}' style="width:{{item.time>10?'300rpx':item.time>30?'400rpx':'200rpx'}}" bindtap='playaudio' data-index="{{index}}">
+          <view class='main_audio_img'>
+            <image src='/imgs/pause-sm.png' wx:if="{{item.playing}}"></image>
+            <image src='/imgs/play-sm.png' wx:else></image>
+          </view>
+
+          <view class='main_time'>{{item.time>60?"60+":item.time}}s</view>
+        </view>
+      </view>
+
+      <view class='main_con' wx:if="{{item.audio_index==2}}">
+        <view class='main_name'>{{item.name}}</view>
+        <view class='main_audio' style="min-width:200rpx;max-width:400rpx;float:left;" data-index="{{index}}">
+          <view class='main_t'>{{item.content}}</view>
+        </view>
+      </view>
+
+      <view class='main_con' wx:if="{{item.audio_index==3}}">
+        <view class='main_name'>{{item.name}}</view>
+        <view class='main_audio' style='padding:10rpx;' data-index="{{index}}" bindtap='preview'>
+          <image class='teacher_pic' mode='widthFix' src="{{item.src}}"></image>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+
+  
+  
+</scroll-view>
+
+
+<view class='toggle_scroll {{show?"active":""}}'>
+  <view class='toggle_cover' bindtap='hidescroll'></view>
+  <view class='toggle_content'>
+    <view class='toggle_title'>
+      <view class='main_nav_link active'>
+        全部
+      </view>
+      <view style='flex-grow:1;width:200rpx;text-align:right;'>
+        <image src='/imgs/close.png' style='width:43rpx;height:43rpx;' bindtap='hidescroll'></image>
+      </view>
+    </view>
+    <scroll-view  scroll-into-view="{{txtid}}" scroll-y="true" scroll-with-animation="true">
+      <view class='main_box' id='{{"txt"+index}}' wx:for="{{commentlist}}" wx:for-item="item" wx:for-index="index">
+        <view class='main_head'>
+          <image src='{{item.head||"/imgs/black.png"}}'></image>
+        </view>
+
+        <view class='main_con '>
+          <view class='main_name'>{{item.name}}</view>
+          <view class='main_text'><text wx:if="{{item.golden}}" style='color:#f25130'>讲师{{item.name}}</text>{{item.content}}</view>
+          <view class='main_date'>{{item.time}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class='fix_btn'>
+  <view class='fix_btn_type' bindtap='toggle_danmu'>{{show_danmu?"关":"弹"}}</view>
+  <view class='fix_btn_back {{show_danmu?"active":""}}'>
+    <image src='/imgs/person.png'></image>
+    <text>{{person}}</text>
+  </view>
+</view>
+
+<view class='fix_danmu'  wx:if="{{show_danmu}}">
+  <view class='danmu_box' wx:for="{{commentlist}}" data-index="{{index}}" wx:for-index="index" wx:for-item="item" wx:if="{{index>=(commentlist.length-3)}}" bindtap='showscroll'>
+    <view class='danmu_head'>
+      <image src='{{item.head||"/imgs/black.png"}}'></image>
+    </view>
+    <view class='danmu_text'>
+      <text wx:if="{{item.golden}}" style='color:#f25130'>讲师{{item.name}}</text>{{item.content}}
+    </view>
+  </view>
+</view>
+
+<view class='fix_btm'>
+  <view class='audio_send' wx:if="{{sendtype==1}}">
+    <image src='/imgs/type2.png' bindtap='sendtypechange'></image>
+    <button bindtouchstart='start' bindtouchend='end' bindtouchmove="moving">{{status==0?"长按录制":"松开结束录制"}}</button>
+    <image src='/imgs/addpic.png' bindtap='addpic'></image>
+  </view>
+
+  <view class='text_send' wx:if="{{sendtype==2}}">
+    <image src='/imgs/type1.png' bindtap='sendtypechange'></image>
+    <input placeholder='发表评论' cursor-spacing="20" value='{{txt}}' bindinput='ipttext'></input>
+    <view class='btn_send' bindtap='sendmsg'>发送</view>
+  </view>
+  
+</view>
+
+
+<view class='cancel_container {{recording?"active":""}}'>
+  <view class='cencel_box'>
+    <view class='cancel_status'>录音中...<text style='font-size:28rpx;color:{{restime>10?"#fff":"#f25130"}}'>{{restime}}</text></view>
+    <view class='cencel_img'>
+      <image src='{{cancel?"/imgs/cancel.png":"/imgs/recording.png"}}'></image>
+    </view>
+    <text class='cancel_tip {{cancel?"active":""}}'>{{cancel==true?"松开手指，取消发送":"手指上划，取消发送"}}</text>
+  </view>
+</view>
+
+
+<view class='start_btn' bindtap="begin">
+  <image src='/imgs/start.png'></image>
+</view>
+
+<canvas canvas-id='photo_canvas' style='position:fixed;left:750rpx;width:{{canvasW}}px;height:{{canvasH}}px;'></canvas>
+
+
+<view class='fix_btn fix_btn2 fix_btn_top' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>

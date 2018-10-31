@@ -1,0 +1,153 @@
+/* pages/project/my/index/index.wxss */
+page{
+  padding-bottom: 120rpx;
+}
+.my_bg{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 750rpx;
+}
+.my_bg image{
+  width: 750rpx;
+  display: block;
+}
+.fix_btn{
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 26rpx;
+  border: 2rpx solid #e6e6e6;
+  z-index: 10;
+  right: 30rpx;
+  bottom: 250rpx;
+  background: #fff;
+}
+.fix_btn image{
+  width: 44rpx;
+  height: 44rpx;
+  display: block;
+  z-index: 11;
+}
+.fix_btn button{
+  border: none;
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  background: transparent;
+  top:0;
+  left:0;
+  z-index: 12;
+  
+}
+.fix_btn button::after{
+  display: none;
+}
+
+.bottom_nav{
+  width: 750rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  border-top: 1px solid #e6e6e6;
+  height: 98rpx;
+  font-size: 24rpx;
+  color:#999;
+  background: #ffffff;
+  z-index: 20;
+}
+
+.bottom_btn{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 22rpx;
+}
+.bottom_btn.active{
+  color: #282828;
+}
+.bottom_btn image{
+  margin-bottom: 6rpx;
+  display: block;
+}
+
+.head_box{
+  width: 750rpx;
+  padding: 98rpx 0 60rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.head_box .head{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 30rpx;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  border:6rpx solid #fff;
+
+}
+.name{
+  font-size: 32rpx;
+  color: #282828;
+  text-align: center;
+}
+.nav_box{
+  width: 750rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  /* margin-bottom: 200rpx; */
+}
+.nav_list{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+.nav_list image{
+  display: block;
+}
+.nav_list:last-child{
+  border: none;
+}
+.nav_list image{
+  display: block;
+}
+.nav_name{
+  flex-grow: 1;
+  width: 100rpx;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  color: #282828;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: left;
+  padding: 0;
+  position: relative;
+}
+
+.nav_name2.active::after{
+  display: block;
+  content:'';
+  width: 16rpx;
+  height: 16rpx;
+  position: absolute;
+  top:-3rpx;
+  left:64rpx;
+  border-radius: 50%;
+  background: #FF5C35;
+}

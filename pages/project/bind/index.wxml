@@ -1,0 +1,50 @@
+<!--pages/project/bind/index.wxml-->
+
+<view class='logo'>
+  <image src='/imgs/logo.png'></image>
+</view>
+
+<view class='ipt_line'>
+  <view class='icon'>
+    <image mode='widthFix' src='/imgs/phone.png'></image>
+    <view>手机号：</view>
+  </view>
+  <input bindinput='iptphone'></input>
+
+</view>
+
+
+
+<view class='ipt_line'>
+  <view class='icon'>
+    <image mode='widthFix' src='/imgs/key.png'></image>
+    <view>验证码：</view>
+  </view>
+  <input bindinput='iptyzm'></input>
+  <view class='yzm' bindtap='sendyzm'>
+    {{canISend?"获取验证码":second}}
+  </view>
+</view>
+
+ 
+<view class='bind {{clickable?"active":""}}' bindtap='bind'>
+  绑定
+</view>
+
+
+<view class='tips {{showlogin?"active":""}}'>
+  <view class='tips_bg' bindtap="cancel"></view>
+  <view class='wx_login_box'>
+    <view class='wx_login_container'>
+      是否同意授权登录（获得你的公开信息：昵称、头像等）
+    </view>
+    <view class='login_btns'>
+      <view class='cancel_btn' bindtap="cancel">取消</view>
+      <button open-type='getUserInfo' class='login_ensure' bindgetuserinfo="binduserinfo">进行授权</button>
+    </view>
+  </view>
+</view>
+
+<view class='fix_btn fix_btn2' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>

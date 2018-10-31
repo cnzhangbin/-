@@ -1,0 +1,26 @@
+<!--pages/project/news/news.wxml-->
+<view>
+<view class='news_list {{item.counts==0?"active":""}}' bindtap='detail' data-index="{{index}}" data-id="{{item.zixun_id}}" wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+  <view class='news_lt'>
+    <view class='news_title'>{{item.zixun_title}}</view>
+
+    <view class='news_date'>
+      <text style='margin-right:48rpx;'>{{item.createTime}}</text>
+      <text>{{item.zixun_view}}人已读</text>
+    </view>
+  </view>
+
+  <view class='news_rt'>
+    <image src='/imgs/more.png'></image>
+  </view>
+</view>
+
+</view>
+
+
+<view class='loadmore {{hasMore?"active":""}}' bindtap='loadmore'>
+  {{hasMore?loading?"加载中":"点击加载更多":"没有更多..."}}
+</view>
+<view class='fix_btn fix_btn2' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>

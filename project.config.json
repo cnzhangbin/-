@@ -1,0 +1,143 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
+	"appid": "wxd423e43af7937dc0",
+	"projectname": "%E7%9B%B4%E6%92%AD%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "资讯",
+					"pathName": "pages/project/news/news",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "资讯详情",
+					"pathName": "pages/project/news/detail/detail",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "直播",
+					"pathName": "pages/project/live/live/live",
+					"query": "id=22"
+				},
+				{
+					"id": 3,
+					"name": "往期课程列表",
+					"pathName": "pages/project/history/history",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "课程详情",
+					"pathName": "pages/project/live/liveinfo/liveinfo",
+					"query": "id=34afa05c097c4839914894c90ac176a0"
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/project/live/pay/pay",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/project/my/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购买记录",
+					"pathName": "pages/project/history/buyhistory/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "绑定农极客",
+					"pathName": "pages/project/bind/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请讲师",
+					"pathName": "pages/project/require/index",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "讲师直播",
+					"pathName": "pages/project/live/teacher/teacher",
+					"query": "id=0988da798e7943d09a5b5335ba960e23"
+				},
+				{
+					"id": -1,
+					"name": "视频播放",
+					"pathName": "pages/project/video/video",
+					"query": "id=3c083888397843beaddb002e176006da"
+				},
+				{
+					"id": 12,
+					"name": "讲师直播测试",
+					"pathName": "pages/project/live/teacher/teacher",
+					"query": "id=70e9c172d2d64aa7a3bf3ad47b56e2ca"
+				},
+				{
+					"id": 13,
+					"name": "讲师直播测试（观众",
+					"pathName": "pages/project/live/live/live",
+					"query": "id=70e9c172d2d64aa7a3bf3ad47b56e2ca"
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/project/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/project/my/bi/bi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/project/my/message/message",
+					"query": ""
+				}
+			]
+		}
+	}
+}

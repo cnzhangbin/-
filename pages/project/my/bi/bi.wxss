@@ -1,0 +1,91 @@
+/* pages/project/my/bi/bi.wxss */
+page{
+  /* padding-top: 30rpx; */
+  background: #fff;
+}
+.main{
+  background: #fff;
+  padding: 0 30rpx;
+}
+.title{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 60rpx 0 100rpx;
+  line-height: 40rpx;
+  background: #fff;
+  color:#282828;
+  font-size: 28rpx;
+  text-align: center;
+}
+.btitle{
+  font-size: 32rpx;
+  color:#282828;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.rad,.type_box{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color:#282828;
+}
+
+.type_box{
+  margin-right: 47rpx;
+}
+
+.cir{
+  width: 22rpx;
+  height: 22rpx;
+  border: 1rpx solid rgb(102,102,102);
+  padding: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 9rpx;
+}
+.cir.active{
+  border-color:  rgb(57,188,84);
+}
+
+.cir.active .circle{
+  background: rgb(57,188,84);
+}
+
+.circle{
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.rad{
+  margin-bottom: 49rpx;
+}
+
+.area{
+  width: 690rpx;
+  box-sizing: border-box;
+  background: #eee;
+  padding: 30rpx;
+  border-radius: 8rpx;
+  border: 1px solid rgb(153,153,153);
+  font-size: 26rpx;
+  color:#282828;
+  line-height: 36rpx;
+  margin-bottom: 99rpx;
+}
+
+.send{
+  width: 690rpx;
+  text-align: center;
+  line-height: 98rpx;
+  height: 98rpx;
+  font-size: 32rpx;
+  color:#fff;
+  background: #FFA121;
+  border-radius: 8rpx;
+}

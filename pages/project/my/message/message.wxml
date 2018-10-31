@@ -1,0 +1,79 @@
+<!--pages/project/my/message/message.wxml-->
+
+<view class='nomore' wx:if="{{list.length==0}}">
+  <image src='/imgs/nolist.png' mode='widthFix'></image>
+  <view>暂无记录</view>
+</view>
+<view class='main' wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+
+  <view class='main_container'>
+    <view class='main_box'>
+      {{item.userName}} 评论了 你
+    </view>
+
+    <view class='user'>
+      <view class='user_pic'>
+        <image src='{{item.userImg}}'></image>
+      </view>
+      <view class='user_info'>
+        <view class='user_name'>{{item.userName}}</view>
+
+        <view class='user_time'>{{item.createTime}}</view>
+      </view>
+      <view class='re' data-index="{{index}}" bindtap='recomment'>回复</view>
+    </view>
+
+    <view class='return_msg'>{{item.cal_type==1?'回复':''}}<text wx:if="{{item.cal_type==1}}" style='color:#FFA936;'>{{item.puserName}}</text>{{item.cal_type==1?'：':''}}{{item.cal_message}}</view>
+
+    <view class='lesson_msg' wx:if="{{item.pCal&&item.pCal.message}}" data-id="{{item.live.live_id}}" data-typeid="{{item.live.typeId}}" bindtap='todetail'>
+      <text style='color:#FFA936;'>{{item.puserName}}：</text> {{item.pCal.message}}
+    </view>
+    <view class='lesson_card' data-id="{{item.live.live_id}}" data-typeid="{{item.live.typeId}}" bindtap='todetail'>
+      <view class='lesson_pic'>
+        <image src='{{item.live.live_img}}'></image>
+      </view>
+
+      <view class='lesson_info'>
+        <view class='lesson_title'>
+          {{item.live.live_name}}
+        </view>
+        <view class='lesson_teacher'>
+          讲师：{{item.live.cr_userName}}
+        </view>
+        <view class='lesson_time'>
+          <!-- <view>{{item.live.createTime}}</view> -->
+          <view>{{item.live.live_view}}次学习</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+
+
+<view class='loadmore {{hasMore?"active":""}}'  wx:if="{{list.length!=0}}" bindtap='loadmore'>
+  {{hasMore?loading?"加载中":"点击加载更多":"没有更多..."}}
+</view>
+
+
+<view class='comment_view {{showcomment?"active":""}}'>
+  <view class='comment_title'>
+    <view>回复</view>
+    <image src='/imgs/btm2.png' bindtap='togglecomment'></image>
+  </view>
+
+  <textarea fixed="true" focus="{{focus}}" maxlength="-1" value="{{comment}}" bindinput='iptcomment' placeholder="{{holder||'输入评论'}}"></textarea>
+
+  <view class='send_btn'>提交  
+    <form report-submit="true" bindsubmit="sendcomment">
+      <button  form-type="submit" class='hiddenform'></button>
+    </form>
+  </view>
+</view>
+
+
+<view class='fix_btn fix_btn2' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>

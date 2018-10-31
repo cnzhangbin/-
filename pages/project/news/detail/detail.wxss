@@ -1,0 +1,35 @@
+/* pages/project/news/detail/detail.wxss */
+page{
+  padding: 30rpx 0 0;
+}
+.main{
+  background: #fff;
+  padding: 0 30rpx;
+  width: 690rpx;
+}
+
+.title{
+  font-size: 28rpx;
+  color: #282828;
+  padding: 30rpx 0;
+}
+.date{
+  color:#999;
+  font-size: 22rpx;
+}
+.content{
+  font-size: 26rpx;
+  color:#282828;
+  padding: 30rpx 0 100rpx;
+  line-height: 40rpx;
+}
+
+.from{
+  font-size: 26rpx;
+  color: #666;
+}
+.views{
+  font-size: 22rpx;
+  color: #999;
+  padding: 30rpx 0;
+}

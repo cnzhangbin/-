@@ -1,0 +1,299 @@
+/* pages/project/video/video.wxss */
+.weui-cells{
+  margin-top: 80rpx;
+  text-align: left;
+}
+.weui-label{
+  width: 5em;
+}
+
+.page-body-button {
+  margin-bottom: 30rpx;
+}
+.page-body{
+  width: 750rpx;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.page-section,video{
+  position: fixed;
+  top:0;
+  width: 750rpx;
+  height: 424rpx;
+  left:0;
+  z-index: 100;
+}
+
+video{
+  width: 750rpx;
+  height: 424rpx;
+  display: block;
+}
+video.hide{
+  display: none;
+}
+scroll-view{
+  background: #fff;
+}
+.main_box{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background: #fff;
+  /* padding: 0 30rpx; */
+  width: 690rpx;
+  /* margin: 30rpx 0 60rpx; */
+  padding:30rpx;
+}
+.main_head{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.main_content{
+  position: absolute;
+  left:0;
+  width: 750rpx;
+  top: 424rpx;
+  bottom:0;
+  z-index: 10;
+  overflow: auto;
+}
+.main_box{
+  border-bottom: 1px solid #ddd;
+}
+
+.main_box:last-child{
+  border-bottom: none;
+}
+.main_box image{
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main_con{
+  flex-grow: 1;
+  width: 100rpx;
+  font-size: 22rpx;
+  color:#999;
+}
+
+.toggle_content .main_con{
+  font-size: 26rpx;
+  color: #666;
+}
+.main_text{
+  margin: 15rpx 0;
+  font-size: 28rpx;
+  color: #282828;
+}
+.main_date{
+  font-size: 22rpx;
+  color: #999;
+}
+
+.toggle_title{
+  padding:  30rpx;
+  background: #fff;
+  font-size: 32rpx;
+  color: #282828;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.main_nav_link{
+  position: relative;
+}
+.main_nav_link.active::after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4rpx;
+  background: #39bc54;
+  bottom: -10rpx;
+  left: 0;
+}
+
+.play_info{
+  width: 690rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  position: relative;
+}
+
+.title{
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #282828;
+}
+
+.money{
+  font-size: 40rpx;
+  color:#ff5c25;
+}
+.teacher{
+  font-size: 24rpx;
+  color: #999;
+  padding: 30rpx 0 20rpx;
+}
+.date{
+  font-size: 22rpx;
+  color: #999;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 30rpx;
+}
+.date text{
+  margin-right: 30rpx;
+}
+.comment_line open-data{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.comment_line{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  /* margin: 20rpx 0; */
+  background: #eee;
+}
+.comment_b{
+  flex-grow: 1;
+  width: 100rpx;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  margin: 0 20rpx;
+  background: #fff;
+  border: 1px solid #efefef;
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#1D2029;
+  font-size: 30rpx;
+}
+
+.comment_view{
+  position: fixed;
+  width: 750rpx;
+  height: 100vh;
+  z-index: 1000;
+  top:100vh;
+  left:0;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
+  padding:20rpx;
+  transition: all .5s ease-out;
+}
+
+.comment_view.active{
+  top:0;
+}
+.comment_title{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  color:#282828;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.comment_title image{
+  width: 48rpx;
+  height: 32rpx;
+}
+.comment_title view{
+  flex-grow: 1;
+  width: 100rpx;
+  font-size: 32rpx;
+}
+
+.comment_view textarea{
+  width: 100%;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+  color:#282828;
+  border: 2rpx solid #999;
+}
+
+.send_btn{
+  float: right;
+  padding: 15rpx 30rpx;
+  font-size: 30rpx;
+  background: #ef7600;
+  color:#fff;
+  border-radius: 8rpx;
+  position: relative;
+}
+
+.hiddenform{
+  position: absolute;
+  opacity: 0;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.sub_cal{
+  padding: 30rpx;
+  padding-left: 100rpx;
+  padding-bottom: 0;
+  background: #F1F1F1;
+  width: 690rpx;
+  margin-left: -130rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+}
+.cal_detail{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.sub_calinfo{
+  flex-grow: 1;
+  width: 100rpx;
+}
+.sub_calpic{
+  margin-right: 20rpx;
+}
+.sub_calname{
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  color:rgb(153,153,153);
+  font-size: 22rpx;
+}
+.suv_caltxt{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color:rgb(40,40,40);
+  padding-bottom: 30rpx;
+}
+.seeall{
+  color:#ef7600;
+  font-size: 28rpx;
+  padding-bottom: 30rpx;
+}

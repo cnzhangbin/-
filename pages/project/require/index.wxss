@@ -1,0 +1,61 @@
+/* pages/project/require/index.wxss */
+page{
+  padding-top: 30rpx;
+}
+.big_title{
+  font-size: 32rpx;
+  color:#282828;
+  padding-left: 58rpx;
+  position: relative;
+  font-weight: bold;
+}
+.big_title::before{
+  content: "";
+  display: block;
+  height: 100%;
+  width: 8rpx;
+  position: absolute;
+  left: 30rpx;
+  background: #39bc54;
+  top:0;
+}
+
+.sm_title{
+  font-size: 28rpx;
+  color: #666;
+  padding-left: 30rpx;
+  margin: 30rpx 0;
+}
+
+input{
+  width: 750rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  font-size: 32rpx;
+  color: #282828;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+}
+
+textarea{
+  height: 240rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  font-size: 32rpx;
+  color: #282828;
+}
+
+.req{
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ffa121;
+  color:#fff;
+  margin-top: 60rpx;
+  font-size: 32rpx;
+}

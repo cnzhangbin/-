@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/project/index/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/socket/index",
+    "pages/project/news/news",
+    "pages/project/news/detail/detail",
+    "pages/project/live/live/live",
+    "pages/project/live/history/historu",
+    "pages/project/history/history",
+    "pages/project/live/liveinfo/liveinfo",
+    "pages/project/live/pay/pay",
+    "pages/project/my/index/index",
+    "pages/project/history/buyhistory/index",
+    "pages/project/history/listenhistory/index",
+    "pages/project/bind/index",
+    "pages/project/require/index",
+    "pages/project/live/teacher/teacher",
+    "pages/project/my/recharge/recharge",
+    "pages/project/prodetail/prodetail",
+    "pages/project/video/video",
+    "pages/project/live/lived/live",
+    "pages/project/focus/focus",
+    "pages/project/search/search",
+    "pages/project/my/bi/bi",
+    "pages/project/my/message/message"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ]
+}

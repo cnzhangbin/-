@@ -1,0 +1,99 @@
+<!--pages/project/my/index/index.wxml-->
+
+<view class='head_box'>
+<view class='my_bg'>
+  <image src='/imgs/mybg.png' mode='widthFix'></image>
+</view>
+  
+  <view class='head'>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class='name'>
+    <open-data type="userNickName"></open-data>
+  </view>
+  
+</view>
+
+
+<view class='nav_box'>
+  <view class='nav_list' bindtap='msg'>
+    <image src='/imgs/newmessage.png' style='width:36rpx;' mode='widthFix'></image>
+
+    <view class='nav_name nav_name2 {{info.calCount==0?"":"active"}}'>消息</view>
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+
+    <!-- <view style='color:#ff5c35;font-size:30rpx;'>￥{{info.cr_userBalance}}</view> -->
+  </view>
+
+  <view class='nav_list' bindtap='recharge'>
+    <image src='/imgs/money.png' style='width:36rpx;' mode='widthFix'></image>
+
+    <view class='nav_name'>提现</view>
+
+    <view style='color:#ff5c35;font-size:30rpx;'>￥{{info.cr_userBalance}}</view>
+  </view>
+  <!--<view class='nav_list' bindtap='buylist'>
+    <image src='/imgs/buy.png' style='width:29rpx;' mode='widthFix'></image>
+
+    <view class='nav_name'>购买记录</view>
+
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+  </view>-->
+  <view class='nav_list' bindtap='listenlist'>
+    <image src='/imgs/class-record.png' style='width:34rpx;' mode='widthFix'></image>
+
+    <view class='nav_name'>听课记录</view>
+
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+  </view>
+  
+  <view class='nav_list'>
+    <image src='/imgs/helper-sm.png' style='width:34rpx;' mode='widthFix'></image>
+
+    <button open-type="contact" hover-class="none" class='nav_name'>客服</button>
+
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+  </view>
+  <view class='nav_list' bindtap='bind'>
+    <image src='/imgs/bind.png' style='width:34rpx;' mode='widthFix'></image>
+
+    <view class='nav_name'>绑定农极客</view>
+
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+  </view>
+  <view class='nav_list' bindtap='teacher'>
+    <image src='/imgs/teacher.png' style='width:35rpx;' mode='widthFix'></image>
+
+    <view class='nav_name'>申请成为讲师</view>
+
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+  </view>
+  <view class='nav_list' bindtap='golive' data-id="{{living.live_id}}" wx:if="{{!!living&&living.live_id}}">
+    <image src='/imgs/living.png' style='width:29rpx;' mode='widthFix'></image>
+
+    <view class='nav_name'>发起课程</view>
+
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+  </view>
+  
+  <view class='nav_list' bindtap='bibi'>
+    <image src='/imgs/bi.png' style='width:36rpx;' mode='widthFix'></image>
+
+    <view class='nav_name'>意见反馈</view>
+    <image src='/imgs/more-big.png' style='width:11rpx;height:21rpx;'></image>
+
+    <!-- <view style='color:#ff5c35;font-size:30rpx;'>￥{{info.cr_userBalance}}</view> -->
+  </view>
+</view> 
+
+
+<view class='bottom_nav'>
+  <view class='bottom_btn' bindtap='index'>
+    <image src='/imgs/icon-index1.png' style='width:54rpx;height:48rpx;'></image>
+    <view class='bottom_btn_text'>首页</view>
+  </view>
+  <view class='bottom_btn active'>
+    <image src='/imgs/icon-person2.png' style='width:41rpx;height:49rpx;'></image>
+    <view class='bottom_btn_text'>我的</view>
+  </view>
+</view>

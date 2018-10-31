@@ -1,0 +1,384 @@
+/* pages/project/live/liveinfo/liveinfo.wxss */
+.play_box{
+  width: 750rpx;
+  height: 468rpx;
+  position: relative;
+}
+page{
+  padding-bottom: 30rpx;
+}
+
+.play_bg{
+  width: 750rpx;
+  height: 468rpx;
+}
+
+.play_status{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50rpx,-50rpx)
+}
+
+.play_info{
+  width: 690rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  position: relative;
+}
+
+.title{
+  padding: 30rpx 85rpx 30rpx 0;
+  font-size: 28rpx;
+  color: #282828;
+}
+
+.money{
+  font-size: 40rpx;
+  color:#ff5c25;
+}
+.teacher{
+  font-size: 24rpx;
+  color: #999;
+  padding: 30rpx 0 20rpx;
+}
+.date{
+  font-size: 22rpx;
+  color: #999;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 30rpx;
+}
+.date text{
+  margin-right: 30rpx;
+}
+
+.abs_btn{
+  position: absolute;
+  right: 30rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.buy_btn{
+  width: 160rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  color:  #fff;
+  background: #FFA121;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+}
+
+.ad{
+  width: 750rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  /* padding: 20rpx 30rpx; */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+}
+.ad image{
+  width: 100%;
+}
+.pro_name{
+  font-size: 28rpx;
+  color: #282828;
+  margin-left: 20rpx;
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100rpx;
+}
+.more{
+  width: 160rpx;
+  height: 58rpx;
+  text-align: center;
+  line-height: 56rpx;
+  border: 1px solid #ffa121;
+  color:#ffa121;
+  font-size: 28rpx;
+  border-radius: 58rpx;
+}
+
+.main_nav{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  color:#999999;
+  font-size: 32rpx;
+  margin-bottom: 44rpx;
+}
+.main_nav .main_nav_link{
+  margin-right: 30rpx;
+  position: relative;
+}
+.main_nav .main_nav_link.active{
+  color: #282828;
+}
+.main_nav .main_nav_link.active::after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4rpx;
+  background: #39bc54;
+  bottom: -10rpx;
+  left: 0;
+}
+
+
+.main{
+  width: 750rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 1rpx 30rpx;
+  /* margin-top: 30rpx; */
+}
+
+.main_pic image{
+  width: 100%;
+  display: block;
+}
+
+.main_pic{
+  padding-bottom: 30rpx;
+  font-size: 28rpx;
+  color:#282828;
+}
+
+.main_box{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  /* padding: 0 30rpx; */
+  width: 690rpx;
+  /* margin: 30rpx 0 60rpx; */
+  padding:30rpx;
+  box-sizing: border-box;
+}
+.main_head{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.main_box{
+  border-bottom: 1px solid #ddd;
+}
+
+ .main_box:last-child{
+  border-bottom: none;
+}
+.main_box image{
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main_con{
+  flex-grow: 1;
+  width: 100rpx;
+  font-size: 22rpx;
+  color:#999;
+}
+
+.main_con{
+  font-size: 26rpx;
+  color: #666;
+}
+.main_text{
+  margin: 15rpx 0;
+  font-size: 28rpx;
+  color: #282828;
+}
+.main_date{
+  font-size: 22rpx;
+  color: #999;
+}
+.go_btn image{
+  display: block;
+  width: 42rpx;
+  height: 41rpx;
+  margin: 0 auto 20rpx;
+}
+.go_btn{
+  font-size: 22rpx;
+  color: #999;
+  text-align: center;
+}
+
+.play_station{
+  position: absolute;
+  bottom: 30rpx;
+  left: 10rpx;
+  right: 10rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.play_station view{
+  font-size: 22rpx;
+  color:#fff;
+  width: 100rpx;
+  text-align: center;
+}
+.play_station slider{
+  flex-grow: 1;
+}
+.comment_line open-data{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.comment_line{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  /* margin: 20rpx 0; */
+  background: #eee;
+  margin-left:-30rpx;
+
+}
+.comment_b{
+  flex-grow: 1;
+  width: 100rpx;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  margin: 0 20rpx;
+  background: #fff;
+  border: 1px solid #efefef;
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#1D2029;
+  font-size: 30rpx;
+}
+.comment_view{
+  position: fixed;
+  width: 750rpx;
+  height: 100vh;
+  z-index: 1000;
+  top:100vh;
+  left:0;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
+  padding:20rpx;
+  transition: all .5s ease-out;
+}
+
+.comment_view.active{
+  top:0;
+}
+.comment_title{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  color:#282828;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.comment_title image{
+  width: 48rpx;
+  height: 32rpx;
+}
+.comment_title view{
+  flex-grow: 1;
+  width: 100rpx;
+  font-size: 32rpx;
+}
+
+.comment_view textarea{
+  width: 100%;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+  color:#282828;
+  border: 2rpx solid #999;
+}
+
+.send_btn{
+  float: right;
+  padding: 15rpx 30rpx;
+  font-size: 30rpx;
+  background: #ef7600;
+  color:#fff;
+  border-radius: 8rpx;
+  position: relative;
+}
+.hiddenform{
+  position: absolute;
+  opacity: 0;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.sub_cal{
+  padding: 30rpx;
+  padding-left: 100rpx;
+  padding-bottom: 0;
+  background: #F1F1F1;
+  width: 690rpx;
+  margin-left: -130rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+}
+.cal_detail{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.sub_calinfo{
+  flex-grow: 1;
+  width: 100rpx;
+}
+.sub_calpic{
+  margin-right: 20rpx;
+}
+.sub_calname{
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  color:rgb(153,153,153);
+  font-size: 22rpx;
+}
+.suv_caltxt{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color:rgb(40,40,40);
+  padding-bottom: 30rpx;
+}
+.seeall{
+  color:#999;
+  font-size: 28rpx;
+  padding-bottom: 30rpx;
+}

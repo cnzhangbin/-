@@ -1,0 +1,4 @@
+<!--pages/project/prodetail/prodetail.wxml-->
+<!-- <image src='/imgs/bannerdetail.jpg' mode='widthFix' bindtap='preview'></image> -->
+<web-view src="https://www.meitiannongzi.com/nongjike/static/jsp/taocan.html?PRODUCT_ID=bee8995c0714431cbdc9711b2a0ee4e9"></web-view>
+<!-- <web-view src="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5ODQzMTk1Mw==&scene=126&sessionid=1539066392&subscene=0#wechat_redirect"></web-view> -->

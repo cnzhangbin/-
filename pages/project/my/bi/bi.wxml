@@ -1,0 +1,47 @@
+<!--pages/project/my/bi/bi.wxml-->
+
+<view style="padding-top:30rpx;background:#eee;">
+  <view class='title'>
+    <view>请留下您的宝贵建议与意见，我们会认真分析并改进。</view>
+    但或许不会一一给予回复，感谢您的理解！
+  </view>
+</view>
+<view class='main'>
+  <view class='btitle'>
+    反馈类型：
+  </view>
+
+  <view class='rad'>
+    <view class='type_box' bindtap='select' data-id="0">
+      <view class='cir {{btype==0?"active":""}}'>
+        <view class='circle'></view>
+      </view>
+      <view>咨询</view>
+    </view>
+    <view class='type_box' bindtap='select' data-id="1">
+      <view class='cir {{btype==1?"active":""}}'>
+        <view class='circle'></view>
+      </view>
+      <view>建议</view>
+    </view>
+    <view class='type_box' bindtap='select' data-id="2">
+      <view class='cir {{btype==2?"active":""}}'>
+        <view class='circle'></view>
+      </view>
+      <view>意见</view>
+    </view>
+    <view class='type_box' bindtap='select' data-id="3">
+      <view class='cir {{btype==3?"active":""}}'>
+        <view class='circle'></view>
+      </view>
+      <view>其他</view>
+    </view>
+  </view>
+  <view class='btitle'>
+    反馈内容：
+  </view>
+
+  <textarea class='area' placeholder='请输入反馈内容...' maxlength="-1" value="{{txt}}" bindinput='ipt'></textarea>
+  <view class='send' bindtap='sendmsg'>提交</view>
+</view>
+

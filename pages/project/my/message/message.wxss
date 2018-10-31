@@ -1,0 +1,196 @@
+/* pages/project/my/message/message.wxss */
+page{
+  padding-bottom: 0;
+}
+.main{
+  background: #eee;
+  padding-top: 30rpx;
+}
+.main_container{
+  background: #fff;
+  padding-bottom: 30rpx;
+}
+.main_box{
+  padding: 20rpx 30rpx;
+  font-size: 26rpx;
+  color:rgb(102,102,102);
+  border-bottom: 1px solid #E6E6E6;
+}
+.user{
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.user_pic{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.user_pic image{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  border-radius: 50%;
+}
+.user_name{
+  font-size: 26rpx;
+  color:rgb(102,102,102);
+}
+
+.user_time{
+  font-size: 22rpx;
+  color:rgb(153,153,153);
+  margin-top: 20rpx;
+}
+
+.re{
+  position: absolute;
+  width: 90rpx;
+  height: 42rpx;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1rpx solid #999;
+  color:#666;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  top:50%;
+  right:30rpx;
+  transform: translateY(-50%);
+}
+
+.return_msg{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  color:#282828;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.lesson_card{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: #eee;
+  height: 150rpx;
+  overflow: hidden;
+}
+.lesson_pic{
+  width: 240rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.lesson_pic image{
+  width: 240rpx;
+  height: 150rpx;
+  display: block;
+}
+.lesson_info{
+  height: 150rpx;
+}
+.lesson_title{
+  font-size: 28rpx;
+  color:#282828;
+  width: 430rpx;
+  height: 70rpx;
+  overflow: hidden;
+  padding-top: 5rpx;
+}
+.lesson_teacher{
+  font-size: 24rpx;
+  color:#999;
+  margin-top: 5rpx;
+}
+.lesson_time{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 22rpx;
+  color:#999;
+  margin-top: 5rpx;
+}
+.lesson_msg{
+  width: 750rpx;
+  box-sizing: border-box;
+  background: #eee;
+  font-size: 28rpx;
+  color:#282828;
+  padding: 14rpx 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.comment_view{
+  position: fixed;
+  width: 750rpx;
+  height: 100vh;
+  z-index: 1000;
+  top:100vh;
+  left:0;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
+  padding:20rpx;
+  transition: all .5s ease-out;
+}
+
+.comment_view.active{
+  top:0;
+}
+.comment_title{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  color:#282828;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.comment_title image{
+  width: 48rpx;
+  height: 32rpx;
+}
+.comment_title view{
+  flex-grow: 1;
+  width: 100rpx;
+  font-size: 32rpx;
+}
+
+.comment_view textarea{
+  width: 100%;
+  background: #eee;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+  color:#282828;
+  border: 2rpx solid #999;
+}
+
+.send_btn{
+  float: right;
+  padding: 15rpx 30rpx;
+  font-size: 30rpx;
+  background: #ef7600;
+  color:#fff;
+  border-radius: 8rpx;
+  position: relative;
+}
+.hiddenform{
+  position: absolute;
+  opacity: 0;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

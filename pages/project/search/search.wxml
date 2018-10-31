@@ -1,0 +1,36 @@
+<!--pages/project/search/search.wxml-->
+<view class='search_container'>
+  <view>
+    <image src='/imgs/search.png' class='active' mode='widthFix'></image>
+    <input placeholder='请输入课程、讲师关键字' bindinput='ipt' value="{{searchtxt}}"></input>
+    <image src='/imgs/cancelb.png' class="{{!!searchtxt?'active':''}}" mode='widthFix' style='width:30rpx;heigh:30rpx;'  bindtap='cancelipt'></image>
+  </view>
+</view>
+
+<view class='search_su' wx:if="{{!searchtxt&&keylist.length>0}}">
+  <view class='search_title'>
+    历史搜索
+    <image src="/imgs/delete.png" mode='widthFix' bindtap='deletehistory'></image>
+  </view>
+  <view class='key_container'>
+    <view wx:for="{{keylist}}" wx:if="{{index<10}}" wx:for-item="item" data-key="{{item}}" bindtap='easy'>{{item}}</view>
+  </view>
+</view>
+<view class='search_su' wx:if="{{!searchtxt}}">
+  <view class='search_title'>
+    热门搜索
+  </view>
+  <view class='key_container'>
+    <view wx:for="{{hot}}" wx:for-item="item" data-key="{{item.hotKey}}" bindtap='easy'>{{item.hotKey}}</view>
+  </view>
+</view>
+
+<view class='search_result' wx:if="{{!!searchtxt}}">
+  <view class='result' data-id="{{item.live_id}}" bindtap='detial' data-typeid="{{item.typeId}}" wx:for="{{searchList}}" wx:for-item="item" wx:for-index="index">
+    <rich-text nodes="{{item.live_name}}"></rich-text>
+  </view>
+</view>
+
+<view class='fix_btn fix_btn2' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>

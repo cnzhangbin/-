@@ -1,0 +1,4 @@
+/* pages/project/prodetail/prodetail.wxss */
+image{
+  width: 750rpx;
+}

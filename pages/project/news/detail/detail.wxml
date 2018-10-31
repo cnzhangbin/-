@@ -1,0 +1,18 @@
+<!--pages/project/news/detail/detail.wxml-->
+
+<view class='main'>
+  <view class='title'>{{news.zixun_title}}</view>
+  <view class='date'>{{news.createTime}}</view>
+
+  <text class='content'>{{news.zixun_context}}</text>
+
+  <!-- <view class='from'>
+    来源：农资福利社
+  </view> -->
+
+  <view class='views'>{{news.zixun_view}}人阅读</view>
+</view>
+
+<view class='fix_btn fix_btn2' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>

@@ -1,0 +1,171 @@
+<!--pages/project/index/index.wxml-->
+<view class='search'>
+  <view class='search_content' bindtap='gosearch'>
+    <image src='/imgs/search.png'></image>
+    <view>请输入课程、讲师关键字</view>
+  </view>
+</view>
+<view class='swiper'>
+  <swiper indicator-dots="true"
+  autoplay="true" interval="{{interval}}" indicator-color="rgba(255,255,255,.4)" indicator-active-color="#ffffff" duration="500" circular="true">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.banner_Img}}" data-id="{{item.banner_title}}" data-t="{{item.banner_name}}" bindtap='bannerdetail' mode="widthFix" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='zixun' bindtap='zixun'>
+  <view class='zixun_title'><image src='/imgs/zixun.png' style='width:59rpx;height:30rpx;display:block'></image></view>
+  <view class='zixun_text'>{{news.zixun_title}}</view>
+</view>
+
+<view class='live' wx:if="{{!!living&&!!living.live_id}}">
+  <view class='live_title'>
+    进行中课程
+  </view>
+
+  <view class='live_content'>
+    <view class='live_bg' bindtap='detail' data-uid="{{living.userId}}" data-id="{{living.live_id}}" data-type="1">
+      <image src='{{living.live_img}}'></image>
+    </view>
+    <view class='live_box' wx:if="{{liveStatus==1}}">
+      <view class='live_box_lt'>
+        <image src='/imgs/live.png' style='width:38rpx;height:27rpx;'></image>
+        <view class='live_box_white'>进行中</view>
+        <image src='/imgs/person.png' style='width:31rpx;height:26rpx;'></image>
+        <view class='live_box_white'>{{living.live_view}}</view>
+      </view>
+      <!--<view class='live_box_rt'>{{living.payMoney>0?"￥"+living.payMoney:"免费"}}</view>-->
+    </view>
+
+    <view class='live_box2' wx:if="{{liveStatus==0}}">
+      <view class='live_box_lt'>
+        <view class='live_box_time'>{{time.day}}天</view>
+        <view class='live_box_mao'>:</view>
+        <view class='live_box_time'>{{time.hour}}</view>
+        <view class='live_box_mao'>:</view>
+        <view class='live_box_time'>{{time.minutes}}</view>
+        <view class='live_box_mao'>:</view>
+        <view class='live_box_time'>{{time.second}}</view>
+        <view class='live_box_mao'></view>
+        <view class='live_box_time' style='font-size:22rpx;' wx:if="{{!!living.subsNum}}">预约：{{living.subsNum}}人</view>
+      </view>
+      <view class='live_box_rt'>
+        <form report-submit="true" bindsubmit="yuyueclick">
+          <button  form-type="submit" class=' {{living.scribeState!=0?"active":""}}'>{{living.scribeState!=0?"已预约":"预约"}}
+          <!-- <view style="font-size:22rpx;">{{living.subsNum}}人已预约</view> -->
+          </button>
+        </form>
+      </view>
+    </view>
+    <!-- <view class='live_box2money' wx:if="{{liveStatus==0}}">{{living.payMoney>0?"￥"+living.payMoney:"免费"}}</view> -->
+    <!-- <view class='live_box2money' wx:if="{{liveStatus==0}}">{{living.subsNum}}人已预约</view> -->
+  </view>
+</view>
+
+<view class='main'>
+  <view class='main_nav'>
+    <view class='main_nav_link {{item.selected?"active":""}}' bindtap='selectnav' data-index="{{index}}" wx:for="{{nav}}" wx:for-item="item" wx:for-index="index">
+      {{item.name}}
+    </view>
+  </view>
+  <view class='live_title'>
+    {{typeid==1?"精选":"往期"}}课程
+
+    <!-- <view class='live_more' bindtap='history'>
+      <text>更多</text>
+      <image src='/imgs/more.png'></image>
+    </view> -->
+  </view>
+
+  <view class='main_box' data-uid="{{item.userId}}" data-typeid="{{item.typeId}}" data-id="{{item.live_id}}" wx:for="{{livelist}}" wx:for-item="item" wx:for-index="index">
+    <form report-submit="true" bindsubmit="detail" data-uid="{{item.userId}}" data-typeid="{{item.typeId}}" data-id="{{item.live_id}}">
+      <button  form-type="submit" class='hidenboom'></button>
+    </form>
+    <view class='main_box_pic'>
+      <image src='{{item.live_bannerImg}}'></image>
+    </view>
+    <view class='main_box_info'>
+      <view class='main_box_info_title'>
+        {{item.live_name}}
+      </view>
+      <view class='main_box_info_teacher'>
+        讲师：{{item.cr_userName}}
+      </view>
+      <view class='main_box_info_detail'>
+        <view class='live_box_lt'>
+          <view class='live_box_white' style='margin-right:20rpx'>{{item.beginTime}}</view>
+          <view class='live_box_white'>{{item.live_view}}次学习</view>
+        </view>
+        <!--<view class='live_box_rt'>{{item.payMoney>0?"￥"+item.payMoney:"免费"}}</view>-->
+      </view>
+    </view>
+  </view>
+
+  
+  <!-- <view class='loadmore' wx:if="{{livelist.length==0}}" style='width:100%;'>
+    没有更多
+  </view> -->
+  
+<view class='loadmore {{hasMore?"active":""}}' bindtap='loadmore'>
+  {{hasMore?loading?"加载中":"点击加载更多":"没有更多..."}}
+</view>
+
+  
+</view>
+
+<view class='fix_btn'>
+  <button open-type="contact" hover-class="none"></button>
+  <image src='/imgs/helper.png'></image>
+</view>
+
+
+<view class='fix_btn fix_btn2' bindtap='shows'>
+  <image src='/imgs/share.png' style='width:60rpx;height:60rpx;'></image>
+</view>
+
+<view class='bottom_nav'>
+  <view class='bottom_btn active'>
+    <image src='/imgs/icon-index2.png' style='width:54rpx;height:48rpx;'></image>
+    <view class='bottom_btn_text'>首页</view>
+  </view>
+  <view class='bottom_btn' bindtap='mine'>
+    <image src='/imgs/icon-person1.png' style='width:41rpx;height:49rpx;'></image>
+    <view class='bottom_btn_text'>我的</view>
+  </view>
+</view>
+
+
+<view class='tips {{showlogin?"active":""}}'>
+  <view class='tips_bg' bindtap="cancel"></view>
+  <view class='wx_login_box'>
+    <view class='wx_login_container'>
+      是否同意授权登录（获得你的公开信息：昵称、头像等）
+    </view>
+    <view class='login_btns'>
+      <view class='cancel_btn' bindtap="cancel">取消</view>
+      <button open-type='getUserInfo' class='login_ensure' bindgetuserinfo="binduserinfo">进行授权</button>
+    </view>
+  </view>
+</view>
+
+
+<view class='share_box' wx:if="{{showshare}}">
+  <view class='bb_container'>
+    <view class='share_container'>
+      <image src='{{share_img}}' style="display:block;width:690rpx;height:898rpx;box-sizing:border-box;"></image>
+      <view class='share_btn_box'>
+        <view class='tocircle' bindtap='savepic'>
+          <view>保存图片</view>
+        </view>
+        <view class='tocircle' style='background:#FFA121;color:#fff;'>
+          <view>发给朋友 <button open-type="share"></button></view>
+        </view>
+      </view>
+    </view>
+    <image src='/imgs/cle.png' bindtap='hideshare' mode='widthFix' class='share_close'></image>
+  </view>
+</view>
+<canvas canvas-id="myCanvas" style="width:690px;height:898px;box-sizing:border-box;opacity:1;position:fixed;left:750rpx;"></canvas>

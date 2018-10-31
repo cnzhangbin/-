@@ -1,0 +1,25 @@
+<!--pages/project/live/pay/pay.wxml-->
+<view class='main'>
+  <view class='main_box'>
+    <view class='main_box_pic'>
+      <image src='{{img}}'></image>
+    </view>
+    <view class='main_box_info'>
+      <view class='main_box_info_title'>
+        {{title}}
+      </view>
+      <view class='main_box_info_detail'>
+        <view class='live_box_rt'>￥{{money}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='pay_info'>
+  <view class='pay_title'>购买须知</view>
+  <view class='pay_tips'>1、该课程为付费系列课程，可在开课时直播学习，也可反复回听。</view>
+  <view class='pay_tips'>2、购买课程后可在【购买记录】里进入听课。</view>
+</view>
+
+<view class='pay_btn' bindtap='buy'>立即购买</view>

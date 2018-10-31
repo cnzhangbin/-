@@ -1,0 +1,163 @@
+<!--pages/project/live/liveinfo/liveinfo.wxml-->
+<view class='play_box'>
+  <image src='{{info.live_audioImg}}' class='play_bg'></image>
+  <image class='play_status' src='{{playstatus==0?"/imgs/play-big.png":"/imgs/pause-big.png"}}' bindtap='playaudio'></image>
+
+  <view class='play_station' wx:if="{{info.comeGo==0}}">
+    <view class='nowtime'>{{nowTime}}</view>
+    <slider bindchanging="sliderchange" bindchange="sliderchanged" value="{{cvalue}}" activeColor="#ffa121" backgroundColor="rgba(255,255,255,.6)" step="1"/>
+    <view class='totaltime'>{{endTime}}</view>
+  </view>
+</view>
+
+<view class='play_info'>
+  <view class='title'>
+    {{info.live_name}}
+  </view>
+  <!--<view class='money'>{{info.payMoney>0?"￥"+info.payMoney:"免费"}}</view>-->
+  <view class='teacher'>讲师：{{info.cr_userName}}</view>
+  <view class='date'>
+    <text>{{info.beginTime}}</text>
+    <text>{{info.live_view}}次学习</text>
+  </view>
+
+  <view class='abs_btn'>
+    <!--<view class='buy_btn' wx:if="{{buystatus==0&&info.payMoney>0}}" bindtap='buy'>购买</view>-->
+    <!-- <view class='go_btn' wx:if="{{buystatus!=0||info.payMoney<=0}}" bindtap='golive'>
+      <image src='/imgs/classmode.png'></image>
+      <view>上课模式</view>
+    </view> -->
+    <view class='go_btn' bindtap='golive'>
+      <image src='/imgs/classmode.png'></image>
+      <view>上课模式</view>
+    </view>
+  </view>
+</view>
+
+<view class='ad'>
+  <image src='/imgs/bbanner.jpg' mode='widthFix' bindtap='gopro'></image>
+  
+  <!-- <button class='more'>了解</button> -->
+</view>
+
+
+<view class='main'>
+  <view class='main_nav'>
+    <view class='main_nav_link {{navStatus==1?"active":""}}'  data-c="1" bindtap='toggleShow'>
+      详情
+    </view>
+    <view class='main_nav_link {{navStatus==2?"active":""}}' data-c="2" bindtap='toggleShow'>
+     课程讨论
+    </view>
+  </view>
+
+  <view class='main_pic' wx:if="{{navStatus==1}}">
+    <rich-text nodes="{{info.live_text}}"></rich-text>
+  </view>
+
+  <view class='comment_line'  wx:if="{{navStatus==2}}">
+    <open-data type="userAvatarUrl"></open-data>
+    <view class='comment_b' bindtap='gocomment'>我来说两句</view>
+  </view>
+  
+  <view class='main_box' wx:for="{{list}}" wx:for-item="item" wx:for-index="index" data-index="{{index}}" data-uname="{{item.userName}}" bindtap='gocomment' wx:if="{{navStatus==2}}">
+    <view class='main_head'>
+      <image src='{{item.img||"/imgs/black.png"}}'></image>
+    </view>
+
+    <view class='main_con '>
+      <view class='main_name' style='color:{{item.userId==info.userId?"#FFA121":"#999"}}'>{{item.userName||"未授权猫友"}}</view>
+      <view class='main_text'>{{item.message}}</view>
+      <view class='main_date'>{{item.createTime}}</view>
+
+      <view class='sub_cal' wx:if="{{item.calList.length>0}}">
+        <view class='cal_detail' wx:for="{{item.calList}}" wx:for-item="citem" catchtap='subcomment' data-cindex="{{cindex}}" data-index="{{index}}" wx:for-index="cindex"  wx:if="{{cindex<=1||seeall[item.record_id]}}">
+          <view class='sub_calpic'>
+            <image src='{{citem.userImg}}'></image>
+          </view>
+          <view class='sub_calinfo'>
+            <view class='sub_calname'>
+              <view style='color:{{citem.cal_userId==info.userId?"#FFA121":"#999"}}'>{{citem.userName}}</view>
+              <!-- <view style='flex-grow:1;text-align:right;'>{{citem.createTime}}</view> -->
+            </view>
+            <view class='suv_caltxt'>
+               {{citem.cal_type==1?'回复':''}}<text wx:if="{{citem.cal_type==1}}" style='color:rgb(102,102,102)'>{{citem.puserName}}</text>{{citem.cal_type==1?'：':''}}{{citem.cal_message}}
+            </view>
+          </view>
+        </view>
+
+        <view class='seeall' data-id="{{item.record_id}}" wx:if="{{!seeall[item.record_id]&&item.calList.length>2}}" catchtap='cliskseeall'>共{{item.calList.length}}条回复</view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class='main'>
+  <view class='main_nav' style='margin-bottom:10rpx;'>
+    <view class='main_nav_link active'>
+      评论
+    </view>
+  </view>
+
+  <view class='main_box' wx:for="{{list}}" wx:for-item="item">
+    <view class='main_head'>
+      <image src='{{item.img||"/imgs/black.png"}}'></image>
+    </view>
+
+    <view class='main_con '>
+      <view class='main_name'>{{item.userName||"未授权猫友"}}</view>
+      <view class='main_text'>{{item.message}}</view>
+      <view class='main_date'>{{item.createTime}}</view>
+    </view>
+  </view>
+</view> -->
+
+
+
+<view class='loadmore {{hasMore?"active":""}}'  wx:if="{{navStatus==2}}" bindtap='loadmore'>
+  {{hasMore?loading?"加载中":"点击加载更多":"没有更多..."}}
+</view>
+
+<view class='share_btn' bindtap='shows'>
+  <image src='/imgs/share.png' mode='widthFix'></image>
+</view>
+
+<view class='share_box' wx:if="{{showshare}}">
+  <view class='bb_container'>
+    <view class='share_container'>
+      <image src='{{share_img}}' style="display:block;width:690rpx;height:898rpx;box-sizing:border-box;"></image>
+      <view class='share_btn_box'>
+        <view class='tocircle' bindtap='savepic'>
+          <view>保存图片</view>
+        </view>
+        <view class='tocircle' style='background:#FFA121;color:#fff;'>
+          <view>发给朋友 <button open-type="share"></button></view>
+        </view>
+      </view>
+    </view>
+    <image src='/imgs/cle.png' bindtap='hideshare' mode='widthFix' class='share_close'></image>
+  </view>
+</view>
+<canvas canvas-id="myCanvas" style="width:690px;height:898px;box-sizing:border-box;opacity:1;position:fixed;left:750rpx;"></canvas>
+
+
+
+<view class='fix_btn fix_btn2' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>
+
+<view class='comment_view {{showcomment?"active":""}}'>
+  <view class='comment_title'>
+    <view>评论</view>
+    <image src='/imgs/btm2.png' bindtap='togglecomment'></image>
+  </view>
+
+  <textarea fixed="true" focus="{{focus}}" maxlength="-1" value="{{comment}}" bindinput='iptcomment' placeholder="{{holder||'输入评论'}}"></textarea>
+
+  <view class='send_btn'>提交
+    <form report-submit="true" bindsubmit="sendcomment">
+      <button  form-type="submit" class='hiddenform'></button>
+    </form>
+  </view>
+</view>

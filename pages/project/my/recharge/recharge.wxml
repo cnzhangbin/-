@@ -1,0 +1,20 @@
+<!--pages/balance/recharge/recharge.wxml-->
+<view class='container-white'>
+  <view class='balance'>
+    <view class='balance-text'>余额</view>
+    <view class='balance-money'>{{user.cr_userBalance}}元</view>
+  </view>
+  <view class='bar'></view>
+
+  <view class='turnout'>
+    <view class='turnout-text'>提现到微信余额</view>
+
+    <view class='turnout-input-box'>
+      <view>￥</view>
+      <input placeholder='输入金额，最小不低于2，最大不超过100' value="{{money}}" bindinput='iptMoney' type='digit'></input>
+    </view>
+      <view class='text-danger ipttxt'>由于不可抗因素，每次提现微信扣除手续费￥2{{money>2?"，实际到账金额"+(money-2):""}}，一个工作日内到账，最终解释权归“每天农资”所有</view>
+
+    <view class='tuenout-btn' bindtap='tixian'>提现</view>
+  </view>
+</view>

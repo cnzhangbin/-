@@ -1,0 +1,74 @@
+/* pages/project/bind/index.wxss */
+
+.logo{
+  width: 200rpx;
+  height: 200rpx;
+  padding: 100rpx 0;
+  margin: 0 auto;
+}
+.logo image{
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.ipt_line{
+  width: 690rpx;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  height: 88rpx;
+  border-radius: 88rpx;
+  box-sizing: border-box;
+  padding-right: 40rpx;
+  margin-bottom: 40rpx;
+}
+.ipt_line input{
+  height: 88rpx;
+  line-height: 88rpx;
+  border: none;
+  box-sizing: border-box;
+  margin: 0;
+  flex-grow: 1;
+  font-size: 32rpx;
+  color:#282828;
+}
+.icon{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color:#282828;
+}
+.icon image{
+  width: 22rpx;
+  display: block;
+  margin-right: 26rpx;
+  margin-left: 40rpx;
+}
+
+.yzm{
+  font-size: 32rpx;
+  color:#ffa121;
+}
+
+.bind{
+  width: 690rpx;
+  height: 88rpx;
+  font-size: 32rpx;
+  line-height: 88rpx;
+  text-align: center;
+  margin: 100rpx auto 0;
+  background: #ccc;
+  border-radius: 8rpx;
+  color: #fff;
+  transition: all .3s ease-in-out;
+}
+
+.bind.active{
+  background: #ffa121;
+}

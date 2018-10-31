@@ -1,0 +1,40 @@
+
+<view class='main'>
+  <view class='main_box' wx:for="{{list}}" wx:if="{{item.live_name}}" data-typeid="{{item.typeId}}" bindtap='detail' data-id="{{item.liveId}}" wx:for-item="item" wx:for-index="index">
+    <view class='main_box_pic'>
+      <image src='{{item.live_bannerImg}}'></image>
+    </view>
+    <view class='main_box_info'>
+      <view class='main_box_info_title'>
+        {{item.live_name}}
+      </view>
+      <view class='main_box_info_teacher'>
+        讲师：{{item.cr_userName}}
+      </view>
+      <view class='main_box_info_detail'>
+        <view class='live_box_lt'>
+          <view class='live_box_white' style='margin-right:20rpx'>{{item.createTime}}</view>
+          <view class='live_box_white'>{{item.live_view}}人学习</view>
+        </view>
+        <!-- <view class='live_box_rt'>{{item.payMoney>0?"￥"+item.payMoney:"免费"}}</view> -->
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+
+
+
+<view class='loadmore {{hasMore?"active":""}}' wx:if="{{list.length>0}}" bindtap='loadmore'>
+  {{hasMore?loading?"加载中":"点击加载更多":"没有更多..."}}
+</view>
+
+<view class='nomore' wx:if="{{list.length==0}}">
+  <image src='/imgs/nolist.png' mode='widthFix'></image>
+  <view>暂无记录</view>
+</view>
+<view class='fix_btn fix_btn2' bindtap='returnindex'>
+  <image src='/imgs/home.png'></image>
+</view>

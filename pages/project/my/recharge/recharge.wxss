@@ -1,0 +1,78 @@
+/* pages/balance/recharge/recharge.wxss */
+page{
+  background: #fff;
+}
+.balance{
+  padding: 36rpx 48rpx;
+}
+.balance-text{
+  font-size: 32rpx;
+  margin-bottom: 16rpx;
+  color: #333;
+}
+.balance-money{
+  font-size: 48rpx;
+  color: #333;
+}
+input{
+  margin: 0;
+}
+.ipttxt{
+  line-height:40rpx;
+  padding:20rpx 0;
+}
+
+.text-danger{
+  color:#f23d18;
+  font-size: 24rpx;
+}
+.bar{
+  height: 20rpx;
+  background: #f0f0f0;
+}
+
+.turnout{
+  padding: 40rpx 48rpx;
+}
+
+.turnout-text{
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 64rpx;
+}
+.turnout-input-box{
+  width: 654rpx;
+  /* margin-bottom: 160rpx; */
+  font-size: 32rpx;
+  position: relative;
+}
+.turnout-input-box input{
+  box-sizing: border-box;
+  width: 654rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: none;
+  border-bottom: 2rpx solid #ccc;
+  padding-left: 40rpx;
+}
+.turnout-input-box view{
+  width: 40rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  position: absolute;
+  top:0;
+  left:0;
+  color:#333;
+}
+.tuenout-btn{
+  width: 654rpx;
+  margin: 0 auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#fff;
+  background: #cc553d;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}

@@ -1,0 +1,20 @@
+<!--pages/socket/socket.wxml-->
+
+
+<scroll-view scroll-y scroll-top="{{totop}}" style="height: 400rpx;background:#efefef;">
+  <view class='cont'>
+    <view wx:for="{{msg}}" wx:foor-item="item">
+      <view wx:if="{{item.audio==false}}">{{item.id+":"+item.content}}</view>
+      <button wx:if="{{item.audio==true}}" data-id="{{item.content}}" bindtap='playaudio'>{{item.id}}发送的音频，点击播放！</button>
+    </view>
+  </view>
+</scroll-view>
+<button bindtouchstart='start' bindtouchend='end'>{{status==0?"长按录制":"松开结束录制"}}</button>
+<!-- <button bindtap='play'>播放</button> -->
+
+<button bindtap='sendmsg'>发送随机文字</button>
+
+<view class='bottom'>
+  <input bindinput='ipt' placeholder='输入文字' cursor-spacing="20"></input>
+  <button class='send' bindtap='sen'>发送文字</button>
+</view>
